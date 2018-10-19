@@ -30,7 +30,7 @@ A basic request for posts, this will fetch 15 posts from the API including their
 ```handlebars
 {{#get "posts" include="tags,authors"}}
     {{#foreach posts}}
-   	    {{title}}
+        {{title}}
     {{/foreach}}
 {{/get}}
 
@@ -41,7 +41,7 @@ A basic request for a single post with id of 2, including its related tags and a
 ```handlebars
 {{#get "posts" id="2" include="tags,authors" as |post|}}
     {{#post}}
-   	    {{title}}
+        {{title}}
     {{/post}}
 {{/get}}
 ```
@@ -70,7 +70,7 @@ Example:
 {{#get "posts"}}
     {{! Loop through our posts collection }}
     {{#foreach posts}}
-   	    {{title}}
+        {{title}}
     {{/foreach}}
 {{/get}}
 ```
@@ -91,7 +91,7 @@ Example using block parameters:
 {{#get "posts" as |articles pages|}}
     {{! Loop through our articles collection }}
     {{#foreach articles}}
-   	    {{title}}
+        {{title}}
     {{/foreach}}
     {{! Use our pages (pagination) object }}
     {{pages.total}}
@@ -110,7 +110,7 @@ If you want to output different content when there are no results, you will need
 {{#get "posts" filter="featured:true"}}
     {{! Loop through our featured posts }}
     {{#foreach posts}}
-   	    {{title}}
+        {{title}}
     {{else}}
     {{! If there are no featured posts}}
        <p>No posts!</p>
@@ -203,15 +203,15 @@ Examples:
 ```handlebars
 {{! Fetch posts with author }}
 {{#get "posts" limit="5" include="authors"}}
-		{{#foreach posts}}
-    		<span>Written by: {{authors}}</span>
+    {{#foreach posts}}
+        <span>Written by: {{authors}}</span>
     {{/foreach}}
 {{/get}}
 
 {{! Fetch posts with author and tags }}
 {{#get "posts" limit="5" include="authors,tags"}}
-		{{#foreach posts}}
-    		<p>Written by: {{authors separator=", "}}</p>
+    {{#foreach posts}}
+        <p>Written by: {{authors separator=", "}}</p>
         <p>keywords: {{tags separator=", "}}</p>
     {{/foreach}}
 {{/get}}
@@ -223,8 +223,8 @@ This is a powerful tool that allows you to make a complex logic-based queries on
 
 ```handlebars
 {{#get "posts" limit="all" filter="featured:true"}}
-		{{#foreach posts}}
-    		<a href="{{slug}}">{title}}</a>
+    {{#foreach posts}}
+        <a href="{{slug}}">{title}}</a>
     {{/foreach}}
 {{/get}}
 ```
@@ -237,20 +237,19 @@ When used with the `{{#get}}` helper, filters can be passed data which is alread
 
 ```handlebars
 {{#post}}
-	<h3><a href="{{url}}">{{title}}</a></h3>
-  <section class="author-meta">
-  <p>Post by: {{primary_author}}</a></p>
+    <h3><a href="{{url}}">{{title}}</a></h3>
+    <section class="author-meta">
+    <p>Post by: {{primary_author}}</a></p>
 
-  {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{id}}" limit="3"}}
-    <p>More posts by this author:
-      <ol>
-        {{#foreach posts}}
-          <li><a href="{{url}}">{{title}}</a></li>
-        {{/foreach}}
-      </ol>
-    </p>
+    {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{id}}" limit="3"}}
+        <p>More posts by this author:
+        <ol>
+            {{#foreach posts}}
+            <li><a href="{{url}}">{{title}}</a></li>
+            {{/foreach}}
+        </ol>
+        </p>
     {{/get}}
-
 {{/post}}
 ```
 
@@ -260,7 +259,7 @@ In some cases, you'll need to wrap the data you pass in with quotes, for example
 
 ```handlebars
 {{#post}}
-  {{#get "posts" filter="published_at:<='{{published_at}}'+id:-{{id}}" limit="3"}}
+    {{#get "posts" filter="published_at:<='{{published_at}}'+id:-{{id}}" limit="3"}}
     ...
     {{/get}}
 {{/post}}
@@ -273,11 +272,11 @@ The primary_tag is a virtual post property and we support filtering by this prop
 
 ```handlebars
 {{#post}}
-  {{#get "posts" filter="primary_tag:{{primary_tag.slug}}" limit="3"}}
-    {{#foreach posts}}
-      <li><a href="{{url}}">{{title}}</a></li>
-    {{/foreach}}
-  {{/get}}
+    {{#get "posts" filter="primary_tag:{{primary_tag.slug}}" limit="3"}}
+        {{#foreach posts}}
+            <li><a href="{{url}}">{{title}}</a></li>
+        {{/foreach}}
+    {{/get}}
 {{/post}}
 ```
 
@@ -289,11 +288,11 @@ The primary_author is a virtual post property and we support filtering by this p
 
 ```handlebars
 {{#post}}
-  {{#get "posts" filter="primary_author:{{primary_author.slug}}" limit="3"}}
-    {{#foreach posts}}
-      <li><a href="{{url}}">{{title}}</a></li>
-    {{/foreach}}
-  {{/get}}
+    {{#get "posts" filter="primary_author:{{primary_author.slug}}" limit="3"}}
+        {{#foreach posts}}
+            <li><a href="{{url}}">{{title}}</a></li>
+        {{/foreach}}
+    {{/get}}
 {{/post}}
 ```
 
