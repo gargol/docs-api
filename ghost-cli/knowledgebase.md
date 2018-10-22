@@ -147,7 +147,7 @@ The `ghost-cli` enforces default linux permissions (via `ghost doctor` hooks) fo
 - For normal users, default directory permissions are 775, and default file permissions are 664.
 - For root users, default directory permissions are 755, and default file permissions are 644.
 
-Running ghost install as the non-root user will result in directories created with 775 (`drwxrwxr-x`) permissions and file with 664 (`-rw-r--r--`) permissions.
+Running ghost install as the non-root user will result in directories created with 775 (`drwxrwxr-x`) permissions and file with 664 (`-rw-rw-r--`) permissions.
 
 These file permissions don't need to be changed. The only change that is executed by ghost-cli is changing ownership, file permissions stay untouched.
 
