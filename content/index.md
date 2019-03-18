@@ -206,7 +206,8 @@ By default, the response for a post will not include these:
     "custom_template":null,
     "primary_author":null,
     "primary_tag":null,
-    "url":"https://demo.ghost.io/welcome/"
+    "url":"https://demo.ghost.io/welcome/",
+    "canonical_url":null
 }]}
 ```
 
@@ -249,6 +250,7 @@ Returns:
     "twitter_description": null,
     "custom_template": null,
     "url": "https://demo.ghost.io/welcome/",
+    "canonical_url": null,
     "authors": [{
         "id": "5951f5fca366002ebd5dbef7",
         "name": "Ghost",

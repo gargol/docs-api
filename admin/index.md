@@ -421,6 +421,7 @@ By default, the API expects and returns content in the mobiledoc format only. To
             "url": "https://demo.ghost.io/tag/getting-started/"
         },
         "url": "https://demo.ghost.io/welcome/",
+        "canonical_url": null,
         "excerpt": "Welcome, it's great to have you here."
     }
 ]}
