@@ -4,7 +4,7 @@ date: "2018-10-01"
 meta_title: "Post Context: Ghost Themes - Documentation"
 meta_description: "The post context is used in Ghost themes to render posts in a publication. Learn more about contexts and building a custom theme!"
 keywords:
-    - api   
+    - api
     - handlebars
     - themes
     - contexts
@@ -60,15 +60,16 @@ When outputting the post, you can use a block expression (`{{#post}}{{/post}}`) 
 - **published_at:** date and time when the post was published date helper
 - **updated_at:** date and time when the post was last updated date helper
 - **created_at:** date and time when the post was created
--  **author** - full details of the post's author 
-- **tags** - a list of tags associated with the post 
+- **authors** - a list of post's authors
+- **primary_author** - direct reference to the first author associated with with the post
+- **tags** - a list of tags associated with the post
 - **primary_tag** - direct reference to the first tag associated with with the post
 
 ## Helpers
 
 Using the `{{#post}}{{/post}}` block expression is the key trick to having a happy time theming your post page. Once inside of the post, you can use any of these useful helpers (and many more) to output your post's data:
 
-`{{title}}`, `{{content}}`, `{{url}}`, `{{author}}`, `{{date}}`, `{{excerpt}}`, `{{img_url}}`, `{{post_class}}`, `{{tags}}`.
+`{{title}}`, `{{content}}`, `{{url}}`, `{{authors}}`, `{{date}}`, `{{excerpt}}`, `{{img_url}}`, `{{post_class}}`, `{{tags}}`.
 
 ## Example code
 

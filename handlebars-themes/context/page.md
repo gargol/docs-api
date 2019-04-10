@@ -44,25 +44,27 @@ When outputting the page, you can use a block expression (`{{#post}}{{/post}}`) 
 
 - **id** - the incremental ID of the page
 - **title** - the title of your static page title helper
-- **excerpt** - a short preview of your page content 
+- **excerpt** - a short preview of your page content
 - **content** - the content of the page
-- **url** - the web address for the static page 
+- **url** - the web address for the static page
 - **feature_image** - the cover image associated with the page
 - **featured** - indicates a featured page. Defaults to `false`
 - **page** - `true` if the post is a static page. Defaults to `false`
-- **meta_title** - custom meta title for the page 
-- **meta_description**  -Custom meta description for the page 
-- **published_at:** - date and time when the page was published  
+- **meta_title** - custom meta title for the page
+- **meta_description**  -Custom meta description for the page
+- **published_at:** - date and time when the page was published
 - **updated_at:** - date and time when the page was last updated
 - **created_at:** - date and time when the page was created
--  **author** - full details of the page's author
+-  **authors** - a list of page's authors
+- **primary_author** - direct reference to the first author associated with with the page
 - **tags** - a list of tags associated with the page
+- **primary_tag** - direct reference to the first tag associated with with the page
 
 ## Helpers
 
 Using the `{{#post}}{{/post}}` block expression is the key trick to having a happy time theming your static page. Once inside of the page, you can use any of these useful helpers (and many more) to output your page's data:
 
-`{{title}}`, `{{content}}`, `{{url}}`, `{{author}}`, `{{date}}`, `{{excerpt}}`, `{{img_url}}`, `{{post_class}}]`, `{{tags}}`.
+`{{title}}`, `{{content}}`, `{{url}}`, `{{authors}}`, `{{date}}`, `{{excerpt}}`, `{{img_url}}`, `{{post_class}}]`, `{{tags}}`.
 
 ## Example Code
 
